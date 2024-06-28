@@ -1,0 +1,108 @@
+<!-- <div class="container-fluid mt-5">
+  <div class="row justify-content-center align-items-center g-2">
+    <div class="col-md-1"></div>
+    <div class="col-md-7"><app-slider></app-slider></div>
+    <div class="col-md-4">
+      <img src="assets/images/Home/EpicGaming.jpg" alt="" />
+    </div>
+  </div>
+</div> -->
+<div class="container-fluid mt-2">
+  <div class="row justify-content-center align-items-center g-2">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <img src="assets/images/Home/EpicGaming.jpg" alt="" />
+    </div>
+
+    <div class="col-md-1"></div>
+  </div>
+  <div class="row justify-content-center align-items-center g-2 mt-5">
+    <h3 class="text-center text-dark">
+      PC Games <i class="bi bi-pc-display ms-3"></i>
+    </h3>
+    <div class="pc-slider-container">
+      <div class="card">
+        <p-carousel
+          [value]="PCGames"
+          [numVisible]="4"
+          [numScroll]="3"
+          [circular]="true"
+          [responsiveOptions]="responsiveOptions"
+          autoplayInterval="4000"
+        >
+          <ng-template let-product pTemplate="item">
+            <div class="border-1 surface-border border-round m-2 p-3 Pc-card">
+              <div class="mb-3">
+                <div class="relative mx-auto">
+                  <img
+                    [src]="product.image"
+                    [alt]="product.name"
+                    width="200"
+                    height="200"
+                    [routerLink]="['/games/gameDetails/', product.id]"
+                    class="w-full border-round"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 font-medium">
+                {{ product.name }}
+              </div>
+              <div class="flex justify-content-between align-items-center">
+                <div class="mt-0 font-semibold text-xl">
+                  {{ product.price | currency : "EGP " }}
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-center g-2 mt-5">
+    <h3 class="text-center" style="color: #1b2132">
+      PS-5 Games <i class="bi bi-playstation ms-3 text-dark"></i>
+    </h3>
+    <div class="ps-slider-container">
+      <div class="card">
+        <p-carousel
+          [value]="PSGames"
+          [numVisible]="4"
+          [numScroll]="3"
+          [circular]="true"
+          [responsiveOptions]="responsiveOptions"
+          autoplayInterval="5000"
+        >
+          <ng-template let-product pTemplate="item">
+            <div class="border-1 surface-border border-round m-2 p-3 Ps-card">
+              <div class="mb-3">
+                <div class="relative mx-auto">
+                  <img
+                    [src]="product.image"
+                    [alt]="product.name"
+                    width="200"
+                    height="200"
+                    [routerLink]="['/games/gameDetails/', product.id]"
+                    class="w-full border-round"
+                  />
+                </div>
+              </div>
+              <div class="mb-3 font-medium">
+                {{ product.name }}
+              </div>
+              <div class="flex justify-content-between align-items-center">
+                <div class="mt-0 font-semibold text-xl">
+                  {{ product.price | currency : "EGP " }}
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+      <!-- <app-ps-slider
+        *ngFor="let item of PSGames"
+        [psproduct]="item"
+      ></app-ps-slider> -->
+    </div>
+  </div>
+</div>

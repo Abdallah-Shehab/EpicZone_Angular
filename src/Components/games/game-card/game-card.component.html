@@ -1,0 +1,20 @@
+<div class="package">
+  <div class="package2 card_box">
+    <span></span>
+    <p class="text">{{ product.name }}</p>
+    <img src="{{ product.image }}" alt="" />
+    <br />
+    <br />
+    <p class="text">{{ product.price | currency : "EGP " }}</p>
+    <p class="text">{{ product.condtion }}</p>
+
+    <a
+      [routerLink]="['/games/gameDetails/', product.id]"
+      routerLinkActive="active text-warning"
+    >
+      <button>Details</button></a
+    >
+
+    <!-- <a href="/Product/Edit/tem.Id"> <button>Update</button></a> -->
+  </div>
+</div>

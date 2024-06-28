@@ -1,0 +1,40 @@
+<div class="container-fluid mt-5">
+  <div class="row justify-content-center align-items-center g-2">
+    <div class="col-md-1"></div>
+
+    <div class="col">
+      <h1 class="text-dark">{{ Game?.name }}</h1>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-center g-2 mt-5">
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+      <div class="img-container rounded p-5">
+        <img src="{{ Game?.image }}" height="500" width="385" alt="" />
+      </div>
+    </div>
+    <div
+      class="col-md-4 d-flex flex-column flex-wrap justify-content-start align-content-start p-5 btn-col"
+    >
+      <h1 class="text-dark">{{ Game?.name }}</h1>
+      <h3 class="text-danger">{{ Game?.price | currency : "EGP " }}</h3>
+      <button>Add To Cart</button>
+      <hr />
+      <h3 class="text-danger">Condtion : {{ Game?.condtion }}</h3>
+      <h3 class="text-danger">Category : {{ Game?.category }}</h3>
+    </div>
+  </div>
+  <div class="row justify-content-center align-items-center mt-3">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-10 col-sm-12 p-3">
+      <div class="dis-container rounded p-5">
+        <h2 class="text-warning text-center">Description</h2>
+        <hr class="text-warning" />
+        <p class="text-light fs-4">{{ Game?.description }}</p>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>

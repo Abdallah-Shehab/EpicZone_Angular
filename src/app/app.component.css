@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+20&display=swap");
+
+* {
+  font-family: "Jersey 20", sans-serif;
+  font-weight: normal;
+  font-style: italic;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: #eee;
+  height: auto;
+  color: white;
+}
+::-webkit-scrollbar {
+  background-color: #000000; /* Background color of the scrollbar track */
+  height: 10px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #f9c740; /* Color of the scrollbar thumb */
+}

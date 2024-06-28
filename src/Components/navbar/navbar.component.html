@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark p-1">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Epic <span>Zone</span></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div
+      class="collapse navbar-collapse justify-content-end nav-links"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav m-2">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            aria-current="page"
+            href="#"
+            [routerLink]="['/']"
+            routerLinkActive="active text-warning"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#"
+            [routerLink]="['/games']"
+            routerLinkActive="active text-warning"
+            >Games</a
+          >
+        </li>
+
+        @if(isLoggedIn()){
+        <li class="nav-item" *ngIf="userDetails.role == 'Admin'">
+          <a
+            class="nav-link"
+            [routerLink]="['/Dashboard']"
+            routerLinkActive="active text-warning"
+            >Dashboard</a
+          >
+        </li>
+
+        <button class="nav-link" (click)="logout()">Logout</button>
+
+        }@else{
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/login']"
+            routerLinkActive="active text-warning"
+            >Login</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/register']"
+            routerLinkActive="active text-warning"
+            >Register</a
+          >
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</nav>

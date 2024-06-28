@@ -1,0 +1,33 @@
+<div class="container-fluid mt-5 mb-5">
+  <div class="row justify-content-center align-items-center g-2 w-100">
+    <form class="form" (ngSubmit)="login(loginModel)">
+      <p class="title">Login</p>
+
+      <label>
+        <input
+          class="input"
+          type="email"
+          placeholder=""
+          required=""
+          [(ngModel)]="loginModel.Email"
+          name="Email"
+        />
+        <span>Email</span>
+      </label>
+
+      <label>
+        <input
+          class="input"
+          type="password"
+          placeholder=""
+          required=""
+          [(ngModel)]="loginModel.Password"
+          name="Password"
+        />
+        <span>Password</span>
+      </label>
+
+      <button class="submit">Submit</button>
+    </form>
+  </div>
+</div>

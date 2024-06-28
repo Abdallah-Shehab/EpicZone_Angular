@@ -1,0 +1,7 @@
+<div class="card">
+  <p class="title">{{ psproduct.name }}</p>
+  <br />
+  <a [routerLink]="['/games/gameDetails/', psproduct.id]">
+    <img [src]="psproduct.image" />
+  </a>
+</div>

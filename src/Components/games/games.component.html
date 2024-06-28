@@ -1,0 +1,89 @@
+<div class="container-fluid header mb-5">
+  <div class="row justify-content-center align-items-center header-img">
+    <div class="col-md-12 text-center">
+      <h1>Games</h1>
+    </div>
+  </div>
+
+  <div class="row justify-content-center align-items-start mt-5">
+    <div class="col-lg-2 col-md-8 bg-dark rounded fs-4 p-3 mt-5 ms-2">
+      <p>Filter !</p>
+      <hr />
+      <div class="row justify-content-center align-items-center g-2">
+        <p>Category</p>
+
+        <div class="radio-button-container ms-5">
+          <div class="radio-button">
+            <input
+              type="radio"
+              class="radio-button__input"
+              id="radio3"
+              name="radio-group"
+              [(ngModel)]="selectedValue"
+              (change)="getCat()"
+              value=""
+            />
+            <label class="radio-button__label" for="radio3">
+              <span class="radio-button__custom"></span>
+              All
+            </label>
+          </div>
+          <div class="radio-button">
+            <input
+              type="radio"
+              class="radio-button__input"
+              id="radio1"
+              name="radio-group"
+              [(ngModel)]="selectedValue"
+              (change)="getCat()"
+              value="PC"
+            />
+            <label class="radio-button__label" for="radio1">
+              <span class="radio-button__custom"></span>
+              PC
+            </label>
+          </div>
+
+          <div class="radio-button">
+            <input
+              type="radio"
+              class="radio-button__input"
+              id="radio2"
+              name="radio-group"
+              [(ngModel)]="selectedValue"
+              (change)="getCat()"
+              value="PS"
+            />
+            <label class="radio-button__label" for="radio2">
+              <span class="radio-button__custom"></span>
+              PS-5
+            </label>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="row justify-content-start align-items-start">
+        <p>Sort</p>
+        <select
+          [(ngModel)]="SortSelectedValue"
+          (change)="doSort()"
+          class="form form-select ms-3 text-dark"
+        >
+          <option value="" selected>Select Type</option>
+          <option value="ASC">ASC</option>
+          <option value="DES">DES</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-1 col-sm-0 mt-4"></div>
+    <div class="col-lg-8 col-md-12 mt-4">
+      <div class="row justify-content-center align-items-center g-2">
+        <app-game-card
+          *ngFor="let item of Products"
+          [product]="item"
+          class="col-lg-4 col-md-4 mt-4 mx-auto"
+        ></app-game-card>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div
+  class="modal fade text-dark"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <ng-container>
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            Game Deatils
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="row justify-content-center align-items-center g-2">
+            <div class="col-md-6 justify-content-center align-items-center">
+              <div class="img-container ms-3">
+                <img src="{{ game?.image }}" alt="" width="250" height="300" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <h3>{{ game?.name }}</h3>
+              <h3>Price : {{ game?.price | currency : "EGP " }}</h3>
+              <h3>Condtion : {{ game?.condtion }}</h3>
+              <h3>Condtion : {{ game?.discount }} %</h3>
+              <h3>Description :</h3>
+
+              <p>{{ game?.description }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>
